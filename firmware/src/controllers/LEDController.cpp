@@ -33,7 +33,7 @@ void LEDController::setPower(bool enabled) {
   }
 
   isPowered_ = enabled;
-  digitalWrite(Config::PIN_LED_LS, enabled ? HIGH : LOW);
+  digitalWrite(Config::PIN_LED_LS, enabled ? LOW : HIGH);
   delay(10);
   
 }
