@@ -9,10 +9,10 @@ SensorController::SensorController()
       mag2Sensor_(Wire, TLx493D_IIC_ADDR_A0_e),
       mag3Sensor_(Wire, TLx493D_IIC_ADDR_A0_e) {}
 
-void SensorController::powerOff(int pin) { digitalWrite(pin, LOW); }
+void SensorController::powerOff(int pin) { digitalWrite(pin, HIGH); }
 
 void SensorController::powerOn(int pin) {
-  digitalWrite(pin, HIGH);
+  digitalWrite(pin, LOW);
   delay(5);
 }
 
