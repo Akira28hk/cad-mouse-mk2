@@ -51,4 +51,10 @@ const unsigned long LED_CALIBRATING_COLOR = 0x0000FF;
 // FSM timing
 const long IDLE_SLEEP_TIMEOUT_MS = 2 * 60 * 1000;
 
+// Sleep-mode wake on knob motion. Sensors stay powered while asleep,
+// so we can poll them at a slow cadence and wake Idle if any axis
+// deviates from the calibrated baseline by more than the threshold.
+const unsigned long SLEEP_WAKE_POLL_MS = 100;
+const float SLEEP_WAKE_THRESHOLD_MT = 5.0;
+
 }  // namespace Config
