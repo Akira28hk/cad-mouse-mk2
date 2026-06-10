@@ -51,6 +51,11 @@ void HIDController::begin() {
 
 void HIDController::task() { TinyUSBDevice.task(); }
 
+bool HIDController::sendNeutral(uint16_t buttonBits) {
+  static const float kZero[6] = {};
+  return sendReports(kZero, buttonBits);
+}
+
 HIDController::ReportAxes HIDController::makeAxesReport(const float motion[6]) {
   ReportAxes axes{};
   axes.x = static_cast<int16_t>(motion[0]);
