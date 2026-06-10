@@ -15,7 +15,7 @@ void SleepState::enter() {
 void SleepState::update() {
   inputController.update();
 
-  if (inputController.takeActivity()) || knobMoved() {
+  if (inputController.takeActivity() || knobMoved()) {
     stateMachine.changeState(&StateMachine::idleState);
     return;
   }
