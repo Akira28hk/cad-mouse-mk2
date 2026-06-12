@@ -11,6 +11,8 @@ class LEDController {
   void startSpinner(unsigned long color);
   void updateSpinner();
   void off();
+  void dim();
+  void bright();
 
  private:
   enum class Mode {
