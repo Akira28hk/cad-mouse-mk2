@@ -45,7 +45,9 @@ const float AXIS_LIMIT = 350.0;
 // RGB LEDs
 const int LED_COUNT = 8;
 const int LED_BRIGHTNESS = 40;
+const int LED_DIM = 1;
 const unsigned long LED_IDLE_COLOR = 0x00FF00;
+const unsigned long LED_LOCK_COLOR = 0xFFFF00;
 const unsigned long LED_CALIBRATING_COLOR = 0x0000FF;
 
 // FSM timing
@@ -56,5 +58,7 @@ const long IDLE_SLEEP_TIMEOUT_MS = 2 * 60 * 1000;
 // deviates from the calibrated baseline by more than the threshold.
 const unsigned long SLEEP_WAKE_POLL_MS = 100;
 const float SLEEP_WAKE_THRESHOLD_MT = 5.0;
+
+inline bool LOCKPAN = false;
 
 }  // namespace Config
