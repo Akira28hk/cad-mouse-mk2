@@ -28,6 +28,7 @@ class InputController {
   bool calibrationHoldFired_ = false;
   bool leftPressed_ = false;
   bool rightPressed_ = false;
+  bool lockPanFired_ = false;
 
   static InputController* instance_;
 };
