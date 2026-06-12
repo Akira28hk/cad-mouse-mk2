@@ -1,4 +1,5 @@
 #include "controllers/InputController.h"
+#include "contorllers.h"
 
 #include "Config.h"
 
@@ -39,6 +40,7 @@ void InputController::update() {
   if (!areBothPressed()) {
     bothHeldStartMs_ = 0;
     calibrationHoldFired_ = false;
+    lockPanFired_ = false;
     return;
   }
 
@@ -47,6 +49,18 @@ void InputController::update() {
     return;
   }
 
+  if (!lockPanFired_ && !calibrationHoldFired_ && (now - bothHeldStartMs_) >= 1000) {
+    if (!Config::LOCKPAN) {
+      lockPanFired_ = true;
+      ledController.setSolid(Config::LED_LOCK_COLOR);
+      Config::LOCKPAN = true;
+    } else {
+      lockPanFired_ = true;
+      ledController.setSolid(Config::LED_IDLE_COLOR);
+      Config::LOCKPAN = false;
+    }  
+  }
+    
   if (!calibrationHoldFired_ && (now - bothHeldStartMs_) >= kCalibrationHoldMs) {
     calibrationRequested_ = true;
     hadActivity_ = true;
