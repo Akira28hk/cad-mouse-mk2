@@ -9,7 +9,12 @@
 void IdleState::enter() {
   lastUpdateMs_ = 0;
   lastActivityMs_ = millis();
-  ledController.setSolid(Config::LED_IDLE_COLOR);
+  ledController.bright();
+  if (Config::LOCKPAN) {
+    ledController.setSolid(Config::LED_LOCK_COLOR);
+  } else {
+    ledController.setSolid(Config::LED_IDLE_COLOR);
+  }
 }
 
 bool IdleState::handleCalibrationRequest() {
