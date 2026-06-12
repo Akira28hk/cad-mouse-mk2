@@ -8,7 +8,7 @@
 #include "StateMachine.h"
 
 void SleepState::enter() {
-  ledController.off();
+  ledController.dim();
   lastWakePollMs_ = millis();
 }
 
