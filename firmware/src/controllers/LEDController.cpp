@@ -82,3 +82,14 @@ void LEDController::off() {
   ring_.show();
   setPower(false);
 }
+
+void LEDController::dim() {
+  ring_.setBrightness(Config::LED_DIM);
+  ring_.show();
+}
+
+void LEDController::bright() {
+  ring_.setBrightness(Config::LED_BRIGHT);
+  ring_.show();
+}
+
