@@ -1,5 +1,5 @@
 #include "controllers/InputController.h"
-#include "contorllers.h"
+#include "controllers.h"
 
 #include "Config.h"
 
