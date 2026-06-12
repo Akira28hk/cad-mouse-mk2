@@ -89,7 +89,7 @@ void LEDController::dim() {
 }
 
 void LEDController::bright() {
-  ring_.setBrightness(Config::LED_BRIGHT);
+  ring_.setBrightness(Config::LED_BRIGHTNESS);
   ring_.show();
 }
 
